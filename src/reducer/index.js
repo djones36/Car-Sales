@@ -1,3 +1,5 @@
+import { addFeature, removeFeature } from "../actions/index";
+
 export const intialState = {
   additionalPrice: 0,
   car: {
@@ -18,13 +20,28 @@ export const intialState = {
 export const carReducer = (state = intialState, action) => {
   console.log(action);
   switch (action.type) {
-    case "ADD_FEATURES":
+    case addFeature:
       return {
         ...state,
         additionalPrice: state.additionalPrice + action.payload.price,
         car: { ...state.car, features: [...state.car.features, action.payload] }
       };
+    case removeFeature:
+      return {
+        ...state,
+        additionalPrice: state.additionalPrice - action.payload.price,
+        car: {
+          ...state.car,
+          features: [...state.car.features, action.payload]
+        }
+      };
     default:
       return state;
   }
 };
+// export const carReducer = (state = intialState, action) => {
+//   switch (action.type) {
+//     default:
+//       return state;
+//   }
+// };
