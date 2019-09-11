@@ -6,7 +6,7 @@ import Total from "./components/Total";
 import { addFeature, removeFeature } from "./actions/index";
 import { connect } from "react-redux";
 
-const App = () => {
+const App = state => {
   const removeFeature = item => {
     // dispatch an action here to remove an item
   };
@@ -39,5 +39,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  {}(App)
+  { addFeature, removeFeature }(App)
 );
