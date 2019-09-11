@@ -32,6 +32,7 @@ const App = state => {
 // export default App;
 const mapStateToProps = state => {
   return {
+    // state: state
     additionalPrice: state.additionalPrice,
     car: state.car,
     store: state.store
@@ -39,5 +40,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  {}(App)
-);
+  { addFeature, removeFeature }
+)(App);
