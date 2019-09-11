@@ -15,7 +15,7 @@ export const intialState = {
   ]
 };
 
-export const carReducer = (state = instialState, action) => {
+export const carReducer = (state = intialState, action) => {
   console.log(action);
   switch (action.type) {
     case "ADD_FEATURES":
